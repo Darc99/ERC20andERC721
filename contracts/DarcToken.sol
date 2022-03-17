@@ -5,8 +5,8 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract DarcToken is ERC20 {
 
-    // token price for ETH
-    uint256 public tokensPerEth = 1000;
+    // token price per ETH
+    uint256 public tknPerEth = 1000;
 
     //to indicate the admin
     address public admin;
@@ -26,7 +26,7 @@ contract DarcToken is ERC20 {
 
     function buyToken(address receiver, uint256 amount) public returns (uint256){
                 
-        uint256 tokenAmount = amount * tokensPerEth;
+        uint256 tokenAmount = amount * tknPerEth;
         
         _mint(receiver, tokenAmount);
         
